@@ -9,13 +9,7 @@ const FavouriteCats = () => {
 
     return (
         <PageLayout>
-            <GridOfCards
-                cats={
-                    cats.length > 0
-                        ? cats.filter((cat) => cat.isFavourite === true)
-                        : getFavouriteCats() || []
-                }
-            />
+            <GridOfCards cats={getFavouriteCats() || []} />
         </PageLayout>
     );
 };
