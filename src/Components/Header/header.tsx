@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./header.scss";
 const Header = () => {
@@ -24,4 +25,4 @@ const Header = () => {
         </header>
     );
 };
-export default Header;
+export default memo(Header);

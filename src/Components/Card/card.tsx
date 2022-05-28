@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, memo } from "react";
 import { useAppDispatch } from "../../Hooks/useRedux";
 import {
     addFavouriteCat,
@@ -52,4 +52,4 @@ const Card = forwardRef((props: CardProps, ref) => {
         </div>
     );
 });
-export default Card;
+export default memo(Card);

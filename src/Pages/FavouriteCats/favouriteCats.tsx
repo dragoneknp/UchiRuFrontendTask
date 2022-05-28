@@ -1,8 +1,6 @@
-import { useEffect } from "react";
 import GridOfCards from "../../Components/GridOfCards/gridOfCards";
-import { useAppDispatch, useAppSelector } from "../../Hooks/useRedux";
+import { useAppSelector } from "../../Hooks/useRedux";
 import PageLayout from "../../Layout/pageLayout";
-import { getCats } from "../../Store/ActionCreators/getCats";
 import { catSelector } from "../../Store/selectors";
 import { getFavouriteCats } from "../../Utils/clientStorage";
 import "./favouriteCats.scss";
