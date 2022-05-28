@@ -36,8 +36,11 @@ export const catsSlice = createSlice({
                 true;
         },
         deleteFavouriteCat(state, action: PayloadAction<string>) {
-            state.cats.find((cat) => cat.id === action.payload)!.isFavourite =
-                false;
+            if (state.cats.find((cat) => cat.id === action.payload)) {
+                state.cats.find(
+                    (cat) => cat.id === action.payload
+                )!.isFavourite = false;
+            }
         },
         incrementPage(state) {
             state.page += 1;

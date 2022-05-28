@@ -5,6 +5,7 @@ import "./gridOfCards.scss";
 
 interface GridOfCardsProps {
     cats: CatInfo[];
+    reload?: () => void;
 }
 
 const GridOfCards = forwardRef((props: GridOfCardsProps, ref) => {
@@ -19,6 +20,7 @@ const GridOfCards = forwardRef((props: GridOfCardsProps, ref) => {
                             id={cat.id}
                             isFavourite={cat.isFavourite}
                             ref={ref}
+                            reload={props.reload}
                         />
                     );
                 }
@@ -28,6 +30,7 @@ const GridOfCards = forwardRef((props: GridOfCardsProps, ref) => {
                         key={cat.id}
                         id={cat.id}
                         isFavourite={cat.isFavourite}
+                        reload={props.reload}
                     />
                 );
             })}

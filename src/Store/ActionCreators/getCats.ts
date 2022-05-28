@@ -14,7 +14,7 @@ import { AppDispatch } from "../store";
 export const getCats = () => async (dispatch: AppDispatch, getState: any) => {
     try {
         const page = getState().cat.page;
-
+        console.log(page);
         dispatch(fetchCatsStarted());
         const response = await axios.get(
             `https://api.thecatapi.com/v1/images/search?limit=15&page=${page}&order=Desc`,

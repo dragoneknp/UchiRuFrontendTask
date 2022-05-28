@@ -11,6 +11,7 @@ interface CardProps {
     url: string;
     id: string;
     isFavourite: boolean;
+    reload?: () => void;
 }
 
 const Card = forwardRef((props: CardProps, ref) => {
@@ -20,9 +21,15 @@ const Card = forwardRef((props: CardProps, ref) => {
         if (isFavourite) {
             dispatch(deleteFavouriteCat(id));
             deleteFromClient({ url: url, id: id, isFavourite: false });
+            if (props.reload) {
+                props.reload();
+            }
         } else {
             dispatch(addFavouriteCat(id));
             saveOnClient({ url: url, id: id, isFavourite: true });
+            if (props.reload) {
+                props.reload();
+            }
         }
     };
     return (
